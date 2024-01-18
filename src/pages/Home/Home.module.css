@@ -1,0 +1,176 @@
+.Main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 24px;
+}
+
+.Menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 150px;
+    gap: 14px;
+    padding: 14px;
+    border-right: 1px solid black;
+}
+
+.List {
+    width: calc(100% - 150px - 14px);
+}
+
+hr {
+    border: 1px solid black;
+    background-color: #090909;
+}
+
+.Wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 34px;
+    max-width: 100%;
+}
+
+.Item {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 0 5px rgba(0,0,0, 0.55);
+    border-radius: 1vw;
+    padding: 24px;
+    max-width: clamp(350px, 100%, 150px);
+    transition: .3s all ease;
+    cursor: pointer;
+    position: relative;
+}
+.Item > svg > rect {
+    //fill: #1a1a1a !important;
+}
+.Item > svg > g {
+    //fill: #f1f1f1 !important;
+}
+.Item:hover {
+    box-shadow: 5px 5px 15px rgba(0,0,0, 0.5);
+}
+.Item:hover > .ItemIndex{
+    box-shadow: inset 5px 5px 5px rgb(0, 0, 0, 0.5);
+    left: -5px;
+    opacity: 1;
+}
+.ItemIndex{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+    padding: 14px;
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 2px rgb(0, 0, 0, 0.5);
+    top: -5px;
+    left: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: .3s all ease-in-out;
+}
+
+.GoOnTop {
+    position: fixed;
+    border: 2px solid black;
+    border-radius: 1vw;
+    padding: 6px 6px 2px;
+    margin: 0;
+    bottom: 24px;
+    right: 14px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    background-color: white;
+    z-index: 3;
+}
+.GoOnTopActive {
+    opacity: 1;
+    pointer-events: auto;
+}
+.GoOnTop > svg{
+    margin: 0;
+}
+
+.FilmDescription {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    color: gray;
+}
+.FilmDescription > span{
+    color: black;
+}
+
+.Modal {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0, 0.5);
+    padding: 52px 14px;
+    cursor: pointer;
+}
+
+.Active {
+    display: flex;
+    z-index: 3;
+}
+.ModalWrapper {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+.ModalWrapper > div > div > button{
+    background-color: #090909;
+}
+.ModalWrapper > div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    background-color: white;
+    border-radius: .5vw;
+    padding: 14px;
+    cursor: default;
+}
+.ModalWrapper > div > img{
+    max-width: 100%;
+}
+.ModalWrapper > div > div {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 1vw;
+}
+.ModalWrapper > div > div > p {
+    max-width: 550px;
+}
+
+.Rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 14px;
+}
+.Rating > svg{
+    color: #282828;
+}
+.Rating > span {
+    background-color: #ffc170;
+    border-radius: 1vw;
+    padding: 4px 14px;
+}
