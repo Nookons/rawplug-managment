@@ -18,7 +18,7 @@ const ItemCard = ({items}) => {
 
     return (
         <div className={styles.Wrapper}>
-            {items.reverse().map((element, index) => {
+            {items.map((element, index) => {
 
                 let imgLoad = false;
 
@@ -33,10 +33,9 @@ const ItemCard = ({items}) => {
                         </div>*/}
                         <article>Creator: {element.Created}</article>
                         <article>Index: {element.index}</article>
-                        <article>To: {element.Recipient}</article>
                         <article>Quantity: {element.quantity.toLocaleString()}</article>
                         <article>Pallet Receipt: {element.PalletReceipt}</article>
-                        <Barcode width={1.35} height={50} fontSize={0} value={element.PalletReceipt} />
+                        {/*<Barcode width={1.35} height={50} fontSize={0} value={element.PalletReceipt} />*/}
                     </div>
                 )
             })}

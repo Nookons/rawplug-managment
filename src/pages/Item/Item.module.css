@@ -6,8 +6,11 @@
     padding: 14px;
 }
 .Wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
     gap: 14px;
 }
 
@@ -17,6 +20,18 @@
 }
 .Preview > img{
     max-width: 450px;
+}
+
+.Mark {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.Mark > span{
+    background-color: #e1e1e1;
+    padding: 4px;
+    border-radius: 4px;
+    font-weight: 600;
 }
 
 .Settings {

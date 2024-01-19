@@ -1,6 +1,6 @@
 export const HOME_ROUTE = '/'
 export const FAVORITE_ROUTE = '/favorite'
-export const ITEM_ROUTE = '/film'
+export const ITEM_ROUTE = '/item'
 export const PROFILE_ROUTE = '/user'
 
 // User sign
