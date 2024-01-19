@@ -1,6 +1,6 @@
 .Main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     min-height: calc(100dvh - 174px);
     flex-wrap: wrap;
     gap: 14px;
@@ -9,13 +9,12 @@
 
 .Menu {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 14px;
-    padding: 14px;
 }
 
 .List {
-    max-width: 90%;
+    max-width: 100%;
 }
 
 hr {

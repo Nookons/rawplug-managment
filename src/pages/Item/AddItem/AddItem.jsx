@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {writeUserItem} from "../../../utils/ItemsDataBase";
 import {useDispatch, useSelector} from "react-redux";
 import {
@@ -16,6 +16,7 @@ import {HOME_ROUTE} from "../../../utils/consts";
 import { Alert } from '@mui/material';
 import Loader from "../../../components/Loader/Loader";
 import {findAllInRenderedTree} from "react-dom/test-utils";
+import {getItemDetails} from "./GetItemsDetails";
 
 const AddItem = () => {
     const user = useSelector(state => state.user.user)
@@ -27,12 +28,22 @@ const AddItem = () => {
 
     const [formData, setFormData] = useState({
         index: '',
+        description: '',
         FromDepartment: '',
         ToDepartment: '',
         quantity: 0,
+        status: '',
     });
 
-    const handleInputChange = (type, value) => {
+
+
+    useEffect(() => {
+        getItemDetails({setFormData, formData})
+        console.log(formData);
+    }, [formData.index]);
+
+
+    const handleInputChange = (type, value, event) => {
         setFormData((prevData) => ({ ...prevData, [type]: value }));
     };
 
@@ -49,8 +60,10 @@ const AddItem = () => {
             const data = {
                 index: formData.index,
                 FromDepartment: formData.FromDepartment,
+                description: formData.description,
                 ToDepartment: formData.ToDepartment,
                 quantity: formData.quantity,
+                status: formData.status,
             }
 
             const [response, item] = await writeUserItem({data, user});
@@ -85,21 +98,30 @@ const AddItem = () => {
         { title: 'PWT70', value: 1972 },
         { title: 'MSP', value: 1972 },
     ];
+    const statusIndex = [
+        { title: 'Available', value: 1994 },
+        { title: 'Hold', value: 1972 },
+        { title: 'Odzysk', value: 1972 },
+    ];
 
 
     return (
         <div className={styles.Main}>
             <div className={styles.Wrapper}>
-                <h5>User: <span>{user ? user.email : null}</span></h5>
                 <h5 style={{marginTop: 14, color: 'red'}}>{error}</h5>
                 <Loader value={loader} />
+
+                <article style={{color: "gray", margin: '4px 0'}}>From: {user ? user.email : null}</article>
+                <article style={{color: "gray", margin: '4px 0'}}>Description: {formData.description}</article>
+                <hr/>
+
                 <div className={styles.AutoCompleteWrapper}>
                     <div>
                         <Autocomplete
                             freeSolo
                             id="free-solo-2-demo"
                             disableClearable
-                            onChange={(event, value) => handleInputChange('index', value)}
+                            onChange={(event, value) => handleInputChange('index', value, event)}
                             options={itemsIndex.map((option) => option.title)}
                             renderInput={(params) => (
                                 <TextField
@@ -117,12 +139,13 @@ const AddItem = () => {
                         freeSolo
                         id="free-solo-2-demo"
                         disableClearable
+                        value={formData.FromDepartment}
                         onChange={(event, value) => handleInputChange('FromDepartment', value)}
                         options={departmentsIndex.map((option) => option.title)}
                         renderInput={(params) => (
                             <TextField
                                 {...params}
-                                label="From"
+                                label='From'
                                 InputProps={{
                                     ...params.InputProps,
                                     type: 'search',
@@ -134,6 +157,7 @@ const AddItem = () => {
                         freeSolo
                         id="free-solo-2-demo"
                         disableClearable
+                        value={formData.ToDepartment}
                         onChange={(event, value) => handleInputChange('ToDepartment', value)}
                         options={departmentsIndex.map((option) => option.title)}
                         renderInput={(params) => (
@@ -147,10 +171,29 @@ const AddItem = () => {
                             />
                         )}
                     />
+                    <Autocomplete
+                        freeSolo
+                        id="free-solo-2-demo"
+                        disableClearable
+                        value={formData.status}
+                        onChange={(event, value) => handleInputChange('status', value)}
+                        options={statusIndex.map((option) => option.title)}
+                        renderInput={(params) => (
+                            <TextField
+                                {...params}
+                                label="Status"
+                                InputProps={{
+                                    ...params.InputProps,
+                                    type: 'search',
+                                }}
+                            />
+                        )}
+                    />
                     <FormControl variant="outlined">
                         <OutlinedInput
                             id="outlined-adornment-weight"
                             type={'number'}
+                            value={formData.quantity}
                             onChange={(event) => handleInputChange('quantity', event.target.value)}
                             endAdornment={<InputAdornment position="end">sht</InputAdornment>}
                             aria-describedby="outlined-weight-helper-text"

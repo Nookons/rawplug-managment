@@ -39,7 +39,8 @@ export function writeUserItem({data, user}) {
             Sender: data ? data.FromDepartment : null,
             Created: user ? user.email : null,
             PalletReceipt: id + (user ? '-' + user.uid.slice(0, 4) : "-9999"),
-            Status: 'HOLD'
+            status: data ? data.status : null,
+            description: data ? data.description : null
         }
 
         set(ref(db, 'items/' + id + '/'), {

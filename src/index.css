@@ -39,13 +39,23 @@ textarea, input {
   font-family: 'Jost', sans-serif  !important;
 }
 
-button {
+.MyButton {
   background-color: #181818 !important;
   color: white !important;
   font-family: 'Jost', sans-serif  !important;
-  padding: 4px 14px;
-  white-space: nowrap;
+  padding: 4px 14px !important;
+  white-space: nowrap !important;
   margin-top: 14px !important;
+}
+
+button {
+  font-family: 'Jost', sans-serif  !important;
+  white-space: nowrap;
+}
+
+:focus {
+  outline: none !important;
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 a {
