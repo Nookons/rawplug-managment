@@ -7,9 +7,10 @@ import {fetchItems} from "../../stores/async/fetchItems";
 import ItemCard from "./ItemCard";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import {useNavigate} from "react-router-dom";
-import {ADD_ITEM_ROUTE} from "../../utils/consts";
+import {ADD_ITEM_ROUTE, ITEM_ROUTE} from "../../utils/consts";
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
+import MyButton from "../../components/MyButton/MyButton";
 
 
 
@@ -118,9 +119,9 @@ const Home = () => {
             headerName: 'Sender',
             description: 'This column has a value getter and is not sortable.',
             sortable: true,
-            width: 150,
+            width: 100,
             valueGetter: (params) =>
-                `${params.row.Sender}`,
+                `${params.row.Sender} 👉`,
         },
         {
             field: 'Recipient',
@@ -145,13 +146,20 @@ const Home = () => {
         },
     ];
 
+    const handleIndexClick = (e) => {
+        navigate(ITEM_ROUTE + '?_' + e)
+    }
+    const handleQuantityClick = (e) => {
+        console.log('test')
+    }
+
     return (
         <div className={styles.Main}>
             <div className={rootClasses.join(' ')} onClick={goOnTop}>
                 <KeyboardArrowUpIcon/>
             </div>
             <div className={styles.Menu}>
-                    <Button onClick={onAddItem} variant={"contained"} color={"success"}>Add item</Button>
+                <MyButton click={onAddItem}>Add Item</MyButton>
             </div>
 
             {isEmpty
@@ -164,7 +172,15 @@ const Home = () => {
                         <Box sx={{ height: 'auto', width: '100%' }}>
                             <DataGrid
                                 rows={data}
-                                columns={columns}
+                                columns={columns.map((column) => ({
+                                    ...column,
+                                    renderCell: (params) => {
+                                        if (column.field === 'index') {
+                                            return <div style={{cursor: 'pointer'}} onClick={() => handleIndexClick(params.row.id)}>{params.value}</div>;
+                                        }
+                                        return <div>{params.value}</div>;
+                                    },
+                                }))}
                                 initialState={{
                                     pagination: {
                                         paginationModel: {

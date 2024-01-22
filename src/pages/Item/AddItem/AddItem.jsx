@@ -17,6 +17,7 @@ import { Alert } from '@mui/material';
 import Loader from "../../../components/Loader/Loader";
 import {findAllInRenderedTree} from "react-dom/test-utils";
 import {getItemDetails} from "./GetItemsDetails";
+import MyButton from "../../../components/MyButton/MyButton";
 
 const AddItem = () => {
     const user = useSelector(state => state.user.user)
@@ -204,7 +205,7 @@ const AddItem = () => {
                         {/*<FormHelperText id="outlined-weight-helper-text">Quantity</FormHelperText>*/}
                     </FormControl>
                 </div>
-                <Button onClick={addItem}>Add item</Button>
+                <MyButton click={addItem}>Add item</MyButton>
             </div>
         </div>
     );

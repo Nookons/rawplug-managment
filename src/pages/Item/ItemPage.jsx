@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchItems} from "../../stores/async/fetchItems";
 import {Breadcrumbs, Button, Skeleton, Typography} from "@mui/material";
@@ -11,14 +11,18 @@ import EditIcon from '@mui/icons-material/Edit';
 import {getImg, getName, getRecipient, getSender} from "./const";
 import PrintIcon from '@mui/icons-material/Print';
 import SettingsItem from "./SettingsItem";
+import MyButton from "../../components/MyButton/MyButton";
+import ReactToPrint, {useReactToPrint} from "react-to-print";
+import SettingsToPrint from "./Print/SettingsToPrint";
+
 
 const ItemPage = () => {
     const dispatch = useDispatch();
     const items = useSelector(state => state.movies.items)
 
-    const currentURL  = window.location.href;
+    const currentURL = window.location.href;
 
-    const id  = currentURL.split('_')[1]
+    const id = currentURL.split('_')[1]
     const [currentItem, setCurrentItem] = useState({});
 
 
@@ -50,20 +54,32 @@ const ItemPage = () => {
 
     }, [currentItem]);
 
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+    });
+
+    const test = () => {
+        handlePrint()
+    }
+
     return (
         <div className={styles.Main}>
-           <div style={{ backgroundColor: currentItem.Status === "HOLD" ? 'rgb(255,0,0)' : null }} className={styles.Wrapper}>
-               {/*<div className={styles.Preview}>
+            <div ref={componentRef}>
+                <SettingsToPrint currentItem={currentItem} itemData={itemData}/>
+            </div>
+            <div className={styles.Wrapper}>
+                {/*<div className={styles.Preview}>
                    <img src={itemData.imgUrl} alt=""/>
                </div>*/}
-               <SettingsItem currentItem={currentItem} itemData={itemData}/>
-               <div className={styles.Actions}>
-                   <Button><AssignmentTurnedInIcon/></Button>
-                   <Button><PrintIcon/></Button>
-                   <Button><EditIcon/></Button>
-                   <Button><DeleteIcon/></Button>
-               </div>
-           </div>
+                <SettingsItem currentItem={currentItem} itemData={itemData}/>
+                <div className={styles.Actions}>
+                    <MyButton><AssignmentTurnedInIcon/></MyButton>
+                    <MyButton click={test}><PrintIcon/></MyButton>
+                    <MyButton><EditIcon/></MyButton>
+                    <MyButton><DeleteIcon/></MyButton>
+                </div>
+            </div>
         </div>
     );
 };

@@ -1,9 +1,9 @@
 
 .Main {
-    max-width: 1200px;
     min-height: calc(100dvh - 174px);
     margin: 0 auto;
     padding: 14px;
+    background-color: white;
 }
 .Wrapper {
     display: flex;
