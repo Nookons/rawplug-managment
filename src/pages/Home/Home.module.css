@@ -28,6 +28,17 @@ hr {
     gap: 14px;
 }
 
+.WarehouseWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+.WarehouseWrapper > div{
+    border: 1px solid black;
+    padding: 14px;
+    border-radius: 4px;
+}
+
 .Item {
     display: flex;
     flex-direction: column;
