@@ -115,13 +115,13 @@ const Home = () => {
             <h4>Warehouse status</h4>
             <div className={styles.WarehouseWrapper}>
                 <div>
-                    <article>OZ-U-255-164-295</article>
+                    <article>OZ-U-255-164-295 🤖</article>
                     <hr/>
                     <article>Quantity: {OZ_295.toLocaleString()} (sht)</article>
                     <article>Pallet: {OZ_295_PALLET.toLocaleString()} (sht)</article>
                 </div>
                 <div>
-                    <article>OZ-U-255-164-295</article>
+                    <article>KRP-ST-CART-310-B 🤖</article>
                     <hr/>
                     <article>Quantity: {KRP_310.toLocaleString()} (sht)</article>
                     <article>Pallet: {KRP_310_PALLET.toLocaleString()} (sht)</article>
