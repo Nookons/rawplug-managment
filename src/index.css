@@ -8,7 +8,7 @@ font-family: 'Roboto Mono', monospace;*/
 
 * {
   box-sizing: border-box;
-  transition: .3s all ease;
+  transition: .15s all ease;
 }
 
 root {

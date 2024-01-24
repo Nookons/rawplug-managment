@@ -26,7 +26,8 @@ const SettingsItem = ({ currentItem, itemData }) => {
 
             {renderMark('Add date', currentItem?.createdDate)}
             {renderMark('Created', currentItem?.Created)}
-            {renderMark('Quantity', currentItem?.quantity)}
+            {renderMark('Quantity', currentItem?.quantity + ' | ' + currentItem?.JM)}
+            {renderMark('Status', currentItem?.status)}
 
             <article className={styles.Mark}>
                 Sender:

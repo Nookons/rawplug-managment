@@ -31,6 +31,7 @@ hr {
 .WarehouseWrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
     gap: 14px;
 }
 .WarehouseWrapper > div{
@@ -39,6 +40,16 @@ hr {
     border-radius: 4px;
 }
 
+.LastItem {
+    background-color: #eeeeee;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow:  0 0 5px rgba(0,0,0, 0.15);
+    cursor: pointer;
+}
+.LastItem:hover {
+    box-shadow:  2px 2px 5px rgba(0,0,0, 0.5);
+}
 .Item {
     display: flex;
     flex-direction: column;

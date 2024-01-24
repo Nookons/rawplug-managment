@@ -1,0 +1,119 @@
+[
+  {
+    "index": "R-NOZ-16-M/Z",
+    "Name": "Nozzle",
+    "palletQta": 9000,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Nozzle for products",
+    "UsedOnMadescriptionchine": [2, 3]
+  },
+  {
+    "index": "R-NOZ-14-M/Z",
+    "Name": "Nozzle",
+    "palletQta": 9000,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Nozzle for products",
+    "UsedOnMadescriptionchine": [2, 3]
+  },
+  {
+    "index": "R-NOZ-10-M/Z",
+    "Name": "Nozzle",
+    "palletQta": 9000,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Nozzle for products",
+    "UsedOnMadescriptionchine": [2, 3]
+  },
+  {
+    "index": "OZ-U-255-164-295",
+    "Name": "Carton",
+    "palletQta": 400,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Packaging for Chemical injection system 255X165X295MM, 5-layer cardboard",
+    "UsedOnMachine": [2, 3]
+  },
+  {
+    "index": "KRP-ST-CART-310-B",
+    "Name": "Cartridge",
+    "palletQta": 936,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Blue cartridges for products",
+    "UsedOnMachine": [2, 3]
+  },
+  {
+    "index": "KRP-ST-CART-310",
+    "Name": "Cartridge",
+    "palletQta": 936,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Cartridges for products",
+    "UsedOnMachine": [2, 3]
+  },
+  {
+    "index": "KRP-ST-PISTON-B",
+    "Name": "PISTON",
+    "palletQta": 15400,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Blue pistons for products",
+    "UsedOnMachine": [2, 3]
+  },
+  {
+    "index": "KRP-ST-PISTON",
+    "Name": "PISTON",
+    "palletQta": 13200,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Pistons for products",
+    "UsedOnMachine": [2, 3]
+  },
+  {
+    "index": "Q-C-CART-ZKK-385ML",
+    "Name": "Cartridge",
+    "palletQta": 1065,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Cartridges for products",
+    "UsedOnMachine": [1]
+  },
+  {
+    "index": "Q-C-DOLGRAN63",
+    "Name": "Chemical",
+    "palletQta": 1065,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Item for chemical",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-HDK-S13",
+    "Name": "Chemical",
+    "palletQta": 160,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Item for chemical",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-BN-20-SE",
+    "Name": "Barrel",
+    "palletQta": 1000,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Barrel item",
+    "UsedOnMachine": [1, 2, 3]
+  },
+  {
+    "index": "Q-C-EPOXY-EP320",
+    "Name": "Barrel",
+    "palletQta": 1000,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Barrel item",
+    "UsedOnMachine": [1, 2, 3]
+  }
+]

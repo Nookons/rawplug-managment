@@ -16,7 +16,7 @@ export const columns = [
         sortable: true,
         editable: true,
         width: 100,
-        valueGetter: (params) => `${Number(params.row.quantity.toLocaleString())}`,
+        valueGetter: (params) => `${params.row.quantity.toLocaleString()}`,
     },
     {
         field: 'JM',

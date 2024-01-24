@@ -12,9 +12,18 @@ const MyDataGrid = ({data, handleIndexClick}) => {
                     ...column,
                     renderCell: (params) => {
                         if (column.field === 'index') {
-                            return <div style={{cursor: 'pointer'}} onClick={() => handleIndexClick(params.id)}>{params.value}</div>;
+                            return <div style={{cursor: 'pointer', fontFamily: '\'Jost\', sans-serif'}} onClick={() => handleIndexClick(params.id)}>{params.value}</div>;
                         }
-                        return <div>{params.value}</div>;
+                        if (column.field === 'status') {
+                            if (params.value === 'Available') {
+                                return <div style={{backgroundColor: '#7cff78', width: '100%', padding: 14, fontFamily: '\'Jost\', sans-serif'}} >{params.value}</div>;
+                            }
+                            if (params.value === 'Odzysk') {
+                                return <div style={{backgroundColor: '#fff267', width: '100%', padding: 14, fontFamily: '\'Jost\', sans-serif'}} >{params.value}</div>;
+                            }
+                            return <div style={{backgroundColor: '#ff6868', width: '100%', padding: 14, fontFamily: '\'Jost\', sans-serif'}} >{params.value}</div>;
+                        }
+                        return <div style={{fontFamily: '\'Jost\', sans-serif'}}>{params.value}</div>;
                     },
                 }))}
                 initialState={{

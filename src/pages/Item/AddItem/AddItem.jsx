@@ -18,6 +18,7 @@ import Loader from "../../../components/Loader/Loader";
 import {findAllInRenderedTree} from "react-dom/test-utils";
 import {getItemDetails} from "./GetItemsDetails";
 import MyButton from "../../../components/MyButton/MyButton";
+import data from '../../../utils/ItemsData.json'
 
 const AddItem = () => {
     const user = useSelector(state => state.user.user)
@@ -26,11 +27,13 @@ const AddItem = () => {
 
     const [error, setError] = useState('');
     const [loader, setLoader] = useState(false);
+    const [ITEM_INDEX, setITEM_INDEX] = useState([]);
 
     const [formData, setFormData] = useState({
         index: '',
         description: '',
         FromDepartment: '',
+        JM: '',
         ToDepartment: '',
         quantity: 0,
         status: '',
@@ -63,6 +66,7 @@ const AddItem = () => {
                 FromDepartment: formData.FromDepartment,
                 description: formData.description,
                 ToDepartment: formData.ToDepartment,
+                JM: formData.JM,
                 quantity: formData.quantity,
                 status: formData.status,
             }
@@ -82,29 +86,25 @@ const AddItem = () => {
         }
     }
 
-
-    const itemsIndex = [
-        { title: 'KRP-ST-CART-310-B', value: 1994 },
-        { title: 'Q-C-CART-ZKK-385ML', value: 1972 },
-        { title: 'OZ-U-255-164-295', value: 1972 },
-        { title: 'KRP-ST-PISTON', value: 1972 },
-        { title: 'KRP-ST-PISTON-B', value: 1972 },
-        { title: 'Q-C-BN-20-SE', value: 1972 },
-        { title: 'Q-C-EPOXY-EP320', value: 1972 },
-        { title: 'Q-C-HDK-S13', value: 1972 },
-        { title: 'Q-C-DOLGRAN63', value: 1972 },
-    ];
     const departmentsIndex = [
         { title: 'PWT10', value: 1994 },
         { title: 'PWT70', value: 1972 },
         { title: 'MSP', value: 1972 },
     ];
+
     const statusIndex = [
         { title: 'Available', value: 1994 },
         { title: 'Hold', value: 1972 },
         { title: 'Odzysk', value: 1972 },
     ];
 
+    useEffect(() => {
+        setITEM_INDEX([])
+
+        data.map(e => {
+            setITEM_INDEX(prevState => [...prevState, {title: e.index}])
+        })
+    }, [data]);
 
     return (
         <div className={styles.Main}>
@@ -123,7 +123,7 @@ const AddItem = () => {
                             id="free-solo-2-demo"
                             disableClearable
                             onChange={(event, value) => handleInputChange('index', value, event)}
-                            options={itemsIndex.map((option) => option.title)}
+                            options={ITEM_INDEX.map((option) => option.title)}
                             renderInput={(params) => (
                                 <TextField
                                     {...params}
@@ -134,6 +134,8 @@ const AddItem = () => {
                                     }}
                                 />
                             )}
+                            selectOnFocus={false}
+                            autoFocus={false}
                         />
                     </div>
                     <Autocomplete
@@ -153,6 +155,8 @@ const AddItem = () => {
                                 }}
                             />
                         )}
+                        selectOnFocus={false}
+                        autoFocus={false}
                     />
                     <Autocomplete
                         freeSolo
@@ -171,6 +175,8 @@ const AddItem = () => {
                                 }}
                             />
                         )}
+                        selectOnFocus={false}
+                        autoFocus={false}
                     />
                     <Autocomplete
                         freeSolo
@@ -189,6 +195,8 @@ const AddItem = () => {
                                 }}
                             />
                         )}
+                        selectOnFocus={false}
+                        autoFocus={false}
                     />
                     <FormControl variant="outlined">
                         <OutlinedInput
@@ -196,12 +204,12 @@ const AddItem = () => {
                             type={'number'}
                             value={formData.quantity}
                             onChange={(event) => handleInputChange('quantity', event.target.value)}
-                            endAdornment={<InputAdornment position="end">sht</InputAdornment>}
+                            endAdornment={<InputAdornment position="end">{formData.JM}</InputAdornment>}
                             aria-describedby="outlined-weight-helper-text"
                             inputProps={{
                                 'aria-label': 'Quantity',
                             }}
-                        />
+                            required={true} autoFocus={false}/>
                         {/*<FormHelperText id="outlined-weight-helper-text">Quantity</FormHelperText>*/}
                     </FormControl>
                 </div>

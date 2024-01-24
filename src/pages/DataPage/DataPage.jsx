@@ -35,7 +35,12 @@ const DataPage = () => {
     }
 
     return (
-        <div>
+        <div style={{
+            minHeight: 'calc(100dvh - 174px)',
+           padding: 14
+        }}>
+            <h4>Data table</h4>
+            <hr/>
             {!isEmpty
             ?   <MyDataGrid data={data} handleIndexClick={handleIndexClick}/>
             :   <h5>Not item here...</h5>
