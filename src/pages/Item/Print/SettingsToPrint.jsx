@@ -18,8 +18,6 @@ const SettingsToPrint = ({isActive, currentItem, itemData }) => {
         myMinutes = MINUTES
     }
 
-    console.log(myMinutes);
-
     return (
         <div style={{
             position: 'fixed',

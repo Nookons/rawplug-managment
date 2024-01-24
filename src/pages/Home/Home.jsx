@@ -72,7 +72,7 @@ const Home = () => {
             <div className={rootClasses.join(' ')} onClick={goOnTop}>
                 <KeyboardArrowUpIcon/>
             </div>
-            <article>Current version 1.0.2</article>
+            <article>Current version 1.0.3</article>
             <div className={styles.Menu}>
                 <MyButton click={onAddItem}>Add Item</MyButton>
                 <MyButton click={onDataGridClick}>Data grid</MyButton>
@@ -100,7 +100,11 @@ const Home = () => {
                         }
 
                         return (
-                            <div style={{backgroundColor: tempQta < 6000 ? 'rgba(255,0,0,0.35)' : null}}>
+                            <div style={{
+                                backgroundColor: tempQta < 3000 ? 'rgba(255,0,0,0.35)' : null,
+                                filter: !user ? 'blur(5px)' : 'none',
+                                pointerEvents: !user ? 'none' : 'auto',
+                            }}>
                                 <article>{e.index} &#129760;</article>
                                 <hr/>
                                 <article>All have: {tempQta} {e.JM}</article>

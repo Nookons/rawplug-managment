@@ -36,6 +36,15 @@
     "UsedOnMachine": [2, 3]
   },
   {
+    "index": "OZ-P-1150-750",
+    "Name": "Carton",
+    "palletQta": 1900,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Przekladki paletowe 1150 mmx750 mm",
+    "UsedOnMachine": [ 1, 2, 3]
+  },
+  {
     "index": "KRP-ST-CART-310-B",
     "Name": "Cartridge",
     "palletQta": 936,
@@ -72,6 +81,15 @@
     "UsedOnMachine": [2, 3]
   },
   {
+    "index": "KRP-ST-CAP-WHI",
+    "Name": "White",
+    "palletQta": 29271,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "White for products",
+    "UsedOnMachine": [1, 2, 3]
+  },
+  {
     "index": "Q-C-CART-ZKK-385ML",
     "Name": "Cartridge",
     "palletQta": 1065,
@@ -99,13 +117,40 @@
     "UsedOnMachine": "Chemical"
   },
   {
+    "index": "Q-C-HDK-H18",
+    "Name": "Chemical",
+    "palletQta": 160,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Item for chemical",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-HDK-N20",
+    "Name": "Chemical",
+    "palletQta": 160,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Item for chemical",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-HSH-200NA",
+    "Name": "Chemical",
+    "palletQta": 160,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Item for chemical",
+    "UsedOnMachine": "Chemical"
+  },
+  {
     "index": "Q-C-BN-20-SE",
     "Name": "Barrel",
     "palletQta": 1000,
     "JM": "kg",
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
     "description": "Barrel item",
-    "UsedOnMachine": [1, 2, 3]
+    "UsedOnMachine": "Chemical"
   },
   {
     "index": "Q-C-EPOXY-EP320",
@@ -114,6 +159,87 @@
     "JM": "kg",
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
     "description": "Barrel item",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-CM-PSF-STAND-V3",
+    "Name": "Barrel",
+    "palletQta": 1000,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Meszanka chemiczna PSF Standardowy wersja 3",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-SOCAL-P2",
+    "Name": "Chemical",
+    "palletQta": 555,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Barrel item",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-SOCAL-N2R",
+    "Name": "Chemical",
+    "palletQta": 1050,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Barrel item",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-P-POLIMAL-PX",
+    "Name": "Zywica",
+    "palletQta": 1100,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Zywica poliestrowa polimal px",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-P164-T",
+    "Name": "Zywica",
+    "palletQta": 1100,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Zywica poliestrowa polimal px",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-P-120",
+    "Name": "Zywica",
+    "palletQta": 1100,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Zywica poliestrowa polimal px",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-P-602ABP",
+    "Name": "Zywica",
+    "palletQta": 1100,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Zywica poliestrowa polimal px",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-P-GARAMITE",
+    "Name": "Zywica",
+    "palletQta": 1100,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Dodatek reologiczny Garamite 1958",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-FILM-BE-DL-95",
+    "Name": "Folia",
+    "palletQta": 0,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Folia do kielbasekbe DL95",
     "UsedOnMachine": [1, 2, 3]
   }
 ]

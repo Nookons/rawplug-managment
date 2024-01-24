@@ -17,11 +17,11 @@ const SettingsItem = ({ currentItem, itemData }) => {
 
     return (
         <div className={styles.Settings}>
-            <h5>Index: <span>{renderSkeletonOrValue(currentItem?.index)}</span></h5>
-            <article style={{ color: 'gray' }}>#
+            <h3>Index: <span>{renderSkeletonOrValue(currentItem?.index)}</span></h3>
+            <article style={{ color: 'gray', fontSize: 14}}>#
                 <span> {renderSkeletonOrValue(currentItem?.PalletReceipt)}</span>
             </article>
-            <article style={{ color: 'gray' }}>{itemData.name}</article>
+            <article style={{ color: 'gray',  fontSize: 14 }}>{itemData.name}</article>
             <hr />
 
             {renderMark('Add date', currentItem?.createdDate)}
@@ -42,8 +42,6 @@ const SettingsItem = ({ currentItem, itemData }) => {
                 <br />
                 <span> || {itemData.to}</span>
             </article>
-
-            {currentItem && <Barcode width={3} height={50} fontSize={16} value={currentItem.PalletReceipt} />}
         </div>
     );
 };
