@@ -53,6 +53,10 @@ const SettingsToPrint = ({isActive, currentItem, itemData }) => {
                     <span> {currentItem?.createdDate}</span>
                 </article>
                 <article style={{fontSize: '24px', marginTop: 14}}>
+                    Last change date:
+                    <span> {currentItem?.lastChange}</span>
+                </article>
+                <article style={{fontSize: '24px', marginTop: 14}}>
                     Created by:
                     <span> {currentItem?.Created} (Dmytro)</span>
                 </article>

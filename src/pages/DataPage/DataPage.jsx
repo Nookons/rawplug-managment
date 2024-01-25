@@ -8,7 +8,7 @@ import {fetchItems} from "../../stores/async/fetchItems";
 const DataPage = () => {
     const NAVIGATE = useNavigate();
     const DISPATCH = useDispatch();
-    const items = useSelector(state => state.movies.items)
+    const items = useSelector(state => state.items.items)
 
     const [data, setData] = useState([]);
     const [isEmpty, setIsEmpty] = useState(false);

@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchItems} from "../../stores/async/fetchItems";
 import {Breadcrumbs, Button, Skeleton, Typography} from "@mui/material";
 import styles from './Item.module.css'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Barcode from "react-barcode";
 import DeleteIcon from '@mui/icons-material/Delete';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
@@ -14,17 +14,21 @@ import SettingsItem from "./SettingsItem";
 import MyButton from "../../components/MyButton/MyButton";
 import ReactToPrint, {useReactToPrint} from "react-to-print";
 import SettingsToPrint from "./Print/SettingsToPrint";
+import {deleteItem, editItem} from "../../utils/ItemsDataBase";
+import {HOME_ROUTE} from "../../utils/consts";
 
 
 const ItemPage = () => {
-    const dispatch      = useDispatch();
-    const items         = useSelector(state => state.movies.items)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const items = useSelector(state => state.items.items)
 
-    const currentURL    = window.location.href;
-    const rootClasses   = [styles.Main]
-    const id            = currentURL.split('_')[1]
+    const currentURL = window.location.href;
+    const rootClasses = [styles.Main]
+    const id = currentURL.split('_')[1]
 
 
+    const [change, setChange] = useState(false);
     const [currentItem, setCurrentItem] = useState({});
     const [itemData, setItemData] = useState({
         name: '',
@@ -77,6 +81,35 @@ const ItemPage = () => {
         }
     }
 
+    const onDeleteClick = async () => {
+        const id = currentItem.id;
+        const userIndex = prompt('Pls write the ' + currentItem.index + ' for delete')
+
+        if (userIndex === currentItem.index) {
+            try {
+                const response = await deleteItem(id);
+
+                if (response) {
+                    navigate(HOME_ROUTE)
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        } else {
+            alert('Not correct index... Item was not delete')
+        }
+    }
+    const onEditClick = async () => {
+        const id = currentItem.id;
+
+        try {
+            const response = await editItem(id);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+
     return (
         <div className={rootClasses.join(' ')}>
             <div ref={componentRef}>
@@ -86,19 +119,20 @@ const ItemPage = () => {
                 {/*<div className={styles.Preview}>
                    <img src={itemData.imgUrl} alt=""/>
                </div>*/}
-                <SettingsItem currentItem={currentItem} itemData={itemData}/>
+                <SettingsItem currentItem={currentItem} itemData={itemData} change={change}/>
 
-                    <div className={styles.Actions}>
-                        <div>
-                            {currentItem && <Barcode width={3} height={50} fontSize={14} value={currentItem.PalletReceipt} />}
-                        </div>
-                        <div>
-                            <MyButton><AssignmentTurnedInIcon/></MyButton>
-                            <MyButton click={test}><PrintIcon/></MyButton>
-                            <MyButton><EditIcon/></MyButton>
-                            <MyButton><DeleteIcon/></MyButton>
-                        </div>
+                <div className={styles.Actions}>
+                    <div>
+                        {currentItem &&
+                            <Barcode width={3} height={50} fontSize={16} value={currentItem.PalletReceipt}/>}
                     </div>
+                    <div>
+                        <MyButton><AssignmentTurnedInIcon/></MyButton>
+                        <MyButton click={test}><PrintIcon/></MyButton>
+                        <MyButton click={onEditClick}><EditIcon/></MyButton>
+                        <MyButton click={onDeleteClick}><DeleteIcon/></MyButton>
+                    </div>
+                </div>
             </div>
         </div>
     );

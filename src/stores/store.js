@@ -4,11 +4,12 @@ import thunk from "redux-thunk";
 import {favoriteReducer} from "./favoriteReducer";
 import {movieReducer} from "./itemsReducer";
 import {userReducer} from "./userReducer";
+import {actionReducer} from "./actionsReducer";
 
 const rootReducer = combineReducers({
-    movies: movieReducer,
+    items: movieReducer,
     favorite: favoriteReducer,
-    user: userReducer
+    user: userReducer,
 })
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))

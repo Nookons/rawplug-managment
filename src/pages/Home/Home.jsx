@@ -7,6 +7,7 @@ import {useNavigate} from "react-router-dom";
 import {ADD_ITEM_ROUTE, DATA_PAGE_ROUTE, ITEM_ROUTE} from "../../utils/consts";
 import MyButton from "../../components/MyButton/MyButton";
 import data from '../../utils/ItemsData.json'
+import {fetchUsersActions} from "../../stores/async/fetchActions";
 
 
 
@@ -14,12 +15,14 @@ const Home = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const items = useSelector(state => state.movies.items)
+    const items = useSelector(state => state.items.items)
     const user = useSelector(state => state.user.user)
 
     const [scrollY, setScrollY] = useState(0);
 
     const rootClasses = [styles.GoOnTop]
+
+    const [actionsData, setActionsData] = useState([]);
 
     const handleScroll = () => {
         setScrollY(window.scrollY);
@@ -41,7 +44,6 @@ const Home = () => {
 
         async function fetchData() {
             const response = await dispatch(fetchItems());
-            console.log(response);
         }
 
         fetchData();
@@ -101,7 +103,7 @@ const Home = () => {
 
                         return (
                             <div style={{
-                                backgroundColor: tempQta < 3000 ? 'rgba(255,0,0,0.35)' : null,
+                                background: tempQta < 3000 ? 'linear-gradient(270deg, rgba(255,115,115,0.5) 0%, #ffffff 75%)' : null,
                                 filter: !user ? 'blur(5px)' : 'none',
                                 pointerEvents: !user ? 'none' : 'auto',
                             }}>
@@ -114,7 +116,7 @@ const Home = () => {
                                     {tempLast.reverse().slice(0, 3).map(lastElement => {
 
                                         return (
-                                            <div onClick={() => onItemClick(lastElement.id)} className={styles.LastItem}>
+                                            <div style={{backgroundColor: lastElement.status === 'Hold' ? '#ff7373' : null }} onClick={() => onItemClick(lastElement.id)} className={styles.LastItem}>
                                                 <article style={{fontSize: 14}}>Quantity: {lastElement.quantity}</article>
                                                 <article style={{fontSize: 14}}>Add Date: {lastElement.createdDate}</article>
                                                 <article style={{fontSize: 14}}>Receipt: {lastElement.PalletReceipt}</article>

@@ -32,12 +32,15 @@ hr {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 14px;
+    gap: 6px;
 }
 .WarehouseWrapper > div{
-    border: 1px solid black;
+    border: 1px dashed black;
     padding: 14px;
     border-radius: 4px;
+}
+.WarehouseWrapper > div:hover{
+    cursor: grab;
 }
 
 .LastItem {
