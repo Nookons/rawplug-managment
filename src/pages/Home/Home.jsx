@@ -1,14 +1,15 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import styles from './Home.module.css'
 import {useDispatch, useSelector} from "react-redux";
-import {fetchItems} from "../../stores/async/fetchItems";
+import {fetchItems, fetchReadyItems} from "../../stores/async/fetchItems";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import {useNavigate} from "react-router-dom";
-import {ADD_ITEM_ROUTE, DATA_PAGE_ROUTE, ITEM_ROUTE} from "../../utils/consts";
+import {ADD_ITEM_ROUTE, ADD_PALLET_ROUTE, DATA_PAGE_ROUTE, ITEM_ROUTE} from "../../utils/consts";
 import MyButton from "../../components/MyButton/MyButton";
 import data from '../../utils/ItemsData.json'
 import {fetchUsersActions} from "../../stores/async/fetchActions";
-
+import {Button, Drawer} from "@mui/material";
+import Box from "@mui/material/Box";
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
     const navigate = useNavigate();
 
     const items = useSelector(state => state.items.items)
+    const readyItems = useSelector(state => state.items.readyItems)
     const user = useSelector(state => state.user.user)
 
     const [scrollY, setScrollY] = useState(0);
@@ -44,6 +46,7 @@ const Home = () => {
 
         async function fetchData() {
             const response = await dispatch(fetchItems());
+            const responseReady = await dispatch(fetchReadyItems());
         }
 
         fetchData();
@@ -56,31 +59,30 @@ const Home = () => {
         });
     }, []);
 
-    const onAddItem = async(event) => {
+    const onAddItem = async (event) => {
         navigate(ADD_ITEM_ROUTE)
     };
-    const onDataGridClick = async(event) => {
+    const onDataGridClick = async (event) => {
         navigate(DATA_PAGE_ROUTE)
     };
-    const onItemClick = async(id) => {
+    const onItemClick = async (id) => {
         navigate(ITEM_ROUTE + '?_' + id)
     };
 
-
-
+    console.log(readyItems);
 
     return (
         <div className={styles.Main}>
             <div className={rootClasses.join(' ')} onClick={goOnTop}>
                 <KeyboardArrowUpIcon/>
             </div>
-            <article>Current version 1.0.3</article>
+            <h4>Warehouse status | <span>Packed pallets ({readyItems.length})</span></h4>
             <div className={styles.Menu}>
                 <MyButton click={onAddItem}>Add Item</MyButton>
+                <MyButton click={() => navigate(ADD_PALLET_ROUTE)}>Add pallet</MyButton>
                 <MyButton click={onDataGridClick}>Data grid</MyButton>
                 <MyButton click={() => alert('Page in progress...')}>Add Plan</MyButton>
             </div>
-            <h4>Warehouse status</h4>
             {data.length > 0
                 ?
                 <div className={styles.WarehouseWrapper}>
@@ -95,31 +97,39 @@ const Home = () => {
                             items.map(item => {
                                 if (item.index === e.index) {
                                     tempQta = tempQta + item.quantity
-                                    tempPalletsQta ++
+                                    tempPalletsQta++
                                     tempLast.push(item)
                                 }
                             })
                         }
 
                         return (
-                            <div style={{
-                                background: tempQta < 3000 ? 'linear-gradient(270deg, rgba(255,115,115,0.5) 0%, #ffffff 75%)' : null,
-                                filter: !user ? 'blur(5px)' : 'none',
-                                pointerEvents: !user ? 'none' : 'auto',
-                            }}>
-                                <article>{e.index} &#129760;</article>
+                            <div className={styles.Item}>
+                                <article>{e.index}</article>
                                 <hr/>
                                 <article>All have: {tempQta} {e.JM}</article>
-                                <article>Pallets: ({tempPalletsQta}) </article>
+                                <article>Pallets: ({tempPalletsQta})</article>
                                 <br/>
                                 <div style={{display: 'flex', gap: 14, flexWrap: 'wrap'}}>
-                                    {tempLast.reverse().slice(0, 3).map(lastElement => {
+                                    {tempLast.reverse().slice(0, 5).map(lastElement => {
+
+                                        const tempClasses = [styles.LastItems]
+                                        const tempStatus = lastElement.status
+
+                                        switch (tempStatus) {
+                                            case 'Hold':
+                                                tempClasses.push(styles.Hold)
+                                                break
+                                            case 'Odzysk':
+                                                tempClasses.push(styles.Odzysk)
+                                                break
+                                        }
 
                                         return (
-                                            <div style={{backgroundColor: lastElement.status === 'Hold' ? '#ff7373' : null }} onClick={() => onItemClick(lastElement.id)} className={styles.LastItem}>
-                                                <article style={{fontSize: 14}}>Quantity: {lastElement.quantity}</article>
-                                                <article style={{fontSize: 14}}>Add Date: {lastElement.createdDate}</article>
-                                                <article style={{fontSize: 14}}>Receipt: {lastElement.PalletReceipt}</article>
+                                            <div className={tempClasses.join(' ')}
+                                                 onClick={() => onItemClick(lastElement.id)}>
+                                                <article
+                                                    style={{fontSize: 14}}>{lastElement.quantity} | {lastElement.JM}</article>
                                             </div>
                                         )
                                     })}
@@ -130,6 +140,7 @@ const Home = () => {
                 </div>
                 : null
             }
+            <article>Current version 1.0.3</article>
         </div>
     );
 };

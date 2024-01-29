@@ -88,6 +88,7 @@ export function writeUserItem({data, user}) {
             Recipient: data ? data.ToDepartment : null,
             Sender: data ? data.FromDepartment : null,
             Created: user ? getCurrentUSer(user) : null,
+            userUid: user ? user.uid : null,
             PalletReceipt: id + (user ? '-' + user.uid.slice(0, 4) : "-9999"),
             status: data ? data.status : null,
             description: data ? data.description : null

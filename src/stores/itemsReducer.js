@@ -1,48 +1,22 @@
-export const defaultStateMovies = {
+export const defaultStateItems = {
     items: [],
-    comments: [],
-    null: []
+    readyItems: [],
 }
 
 const FETCH_ITEMS       = "FETCH_ITEMS"
-const FETCH_COMMENTS    = "FETCH_COMMENTS"
-const ADD_LIKE          = "ADD_LIKE"
-const ADD_CHILD         = "ADD_CHILD"
+const FETCH_READY_ITEMS       = "FETCH_READY_ITEMS"
 
-export const movieReducer = (state = defaultStateMovies, action) => {
+export const movieReducer = (state = defaultStateItems, action) => {
     switch (action.type) {
-        case "ADD_COMMENT":
-            return {
-                ...state,
-                comments: [...state.comments, action.payload]
-            };
-        case "ADD_LIKE":
-            // Предположим, что action.payload содержит id комментария и обновленные данные по лайкам.
-            return {
-                ...state,
-                comments: state.comments.map(comment =>
-                    comment.id === action.payload.id ? { ...comment, likes: action.payload.likes, userLike: [action.payload.userlike] } : comment
-                )
-            };
-        case "ADD_CHILD":
-            // Предположим, что action.payload содержит id комментария и обновленные данные по лайкам.
-            return {
-                ...state,
-                comments: state.comments.map(comment =>
-                    comment.id === action.payload.fatherId ? { ...comment, child: comment.child ? [...comment.child, action.payload] : [action.payload] } : comment
-                )
-            };
         case "FETCH_ITEMS":
             return {
                 ...state,
                 items: action.payload // Если нужно полностью заменить массив
-                // movies: state.movies.concat(action.payload) // Если нужно добавить данные к существующим
             };
-        case "FETCH_COMMENTS":
+        case "FETCH_READY_ITEMS":
             return {
                 ...state,
-                comments: action.payload // Если нужно полностью заменить массив
-                // comments: state.comments.concat(action.payload) // Если нужно добавить данные к существующим
+                readyItems: action.payload // Если нужно полностью заменить массив
             };
         case "ADD_ITEM":
             return {
@@ -60,6 +34,4 @@ export const movieReducer = (state = defaultStateMovies, action) => {
 };
 
 export const addItemsAction    = (payload) => ({type: FETCH_ITEMS, payload})
-export const addCommentsAction  = (payload) => ({type: FETCH_COMMENTS, payload})
-export const addLikeAction      = (payload) => ({type: ADD_LIKE, payload})
-export const addChildAction     = (payload) => ({type: ADD_CHILD, payload})
+export const addReadyItemsAction    = (payload) => ({type: FETCH_READY_ITEMS, payload})

@@ -18,6 +18,33 @@
     "UsedOnMadescriptionchine": [2, 3]
   },
   {
+    "index": "KRP-R-NOZ-100",
+    "Name": "Nozzle",
+    "palletQta": 9000,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Dusza nozzle nowy typ 140mm do 10 14 16",
+    "UsedOnMadescriptionchine": [2, 3]
+  },
+  {
+    "index": "KRP-R-NOZ-140-Z",
+    "Name": "Nozzle",
+    "palletQta": 9000,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Dusza nozzle nowy typ 140mm do 10 14 16",
+    "UsedOnMadescriptionchine": [2, 3]
+  },
+  {
+    "index": "R-NOZ-140-Z",
+    "Name": "Nozzle",
+    "palletQta": 9000,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Dusza nozzle nowy typ 140mm do 10 14 16",
+    "UsedOnMadescriptionchine": [2, 3]
+  },
+  {
     "index": "R-NOZ-10-M/Z",
     "Name": "Nozzle",
     "palletQta": 9000,
@@ -61,6 +88,24 @@
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
     "description": "Cartridges for products",
     "UsedOnMachine": [2, 3]
+  },
+  {
+    "index": "KRN-ST-CART-600CAP",
+    "Name": "Cartridge",
+    "palletQta": 472,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Kartusz SBS 600ml bialy nylon z nakretka",
+    "UsedOnMachine": [1]
+  },
+  {
+    "index": "KRN-ST-CART-600",
+    "Name": "Cartridge",
+    "palletQta": 472,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Kartusz SBS 600ml bialy nylon",
+    "UsedOnMachine": [1]
   },
   {
     "index": "KRP-ST-PISTON-B",
@@ -162,9 +207,36 @@
     "UsedOnMachine": "Chemical"
   },
   {
+    "index": "Q-C-SBND-W-12-MST",
+    "Name": "Chemical",
+    "palletQta": 1000,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Chemical",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-PRKQ-A150",
+    "Name": "Chemical",
+    "palletQta": 30,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Chemical",
+    "UsedOnMachine": "Chemical"
+  },
+  {
     "index": "Q-CM-PSF-STAND-V3",
     "Name": "Barrel",
     "palletQta": 1000,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Meszanka chemiczna PSF Standardowy wersja 3",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-BYK-D-142",
+    "Name": "Barrel",
+    "palletQta": 800,
     "JM": "kg",
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
     "description": "Meszanka chemiczna PSF Standardowy wersja 3",

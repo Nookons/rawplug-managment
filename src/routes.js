@@ -5,7 +5,7 @@ import {
     PROFILE_ROUTE,
     ADD_ITEM_ROUTE,
     ITEM_ROUTE,
-    DATA_PAGE_ROUTE
+    DATA_PAGE_ROUTE, ADD_PALLET_ROUTE, READY_ITEM_ROUTE
 } from "./utils/consts";
 import Home from "./pages/Home/Home";
 import SignIn from "./pages/Sign/SignIn/SignIn";
@@ -15,6 +15,8 @@ import AddItem from "./pages/Item/AddItem/AddItem";
 import ItemCard from "./pages/Home/ItemCard";
 import ItemPage from "./pages/Item/ItemPage";
 import DataPage from "./pages/DataPage/DataPage";
+import AddPallet from "./pages/Item/AddPallet/AddPallet";
+import ReadyItemPage from "./pages/Item/ReadyItemPage";
 
 // routes for users
 export const publicRoutes = [
@@ -49,6 +51,16 @@ export const privateRoutes = [
     {
         path: ITEM_ROUTE,
         Component: ItemPage,
+        label: 'FilmPrivate',
+    },
+    {
+        path: READY_ITEM_ROUTE,
+        Component: ReadyItemPage,
+        label: 'FilmPrivate',
+    },
+    {
+        path: ADD_PALLET_ROUTE,
+        Component: AddPallet,
         label: 'FilmPrivate',
     },
     {
