@@ -33,7 +33,7 @@ p { font-size: clamp(14px, .8vw, 21px);  font-family: 'Jost', sans-serif;}
 
 textarea, input {
   max-width: 100%;
-  font-size: clamp(14px, .8vw, 21px) !important;
+  font-size: clamp(16px, .8vw, 21px) !important;
   font-weight: 600 !important;
   margin-top: 14px;
   font-family: 'Jost', sans-serif  !important;
