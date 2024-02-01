@@ -14,7 +14,7 @@ import SettingsItem from "./SettingsItem";
 import MyButton from "../../components/MyButton/MyButton";
 import ReactToPrint, {useReactToPrint} from "react-to-print";
 import SettingsToPrint from "./Print/SettingsToPrint";
-import {deleteItem, editItem} from "../../utils/ItemsDataBase";
+import {deleteItem, editItem} from "../../utils/DataBase/ItemsDataBase";
 import {HOME_ROUTE} from "../../utils/consts";
 
 

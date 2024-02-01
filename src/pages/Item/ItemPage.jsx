@@ -14,7 +14,7 @@ import SettingsItem from "./SettingsItem";
 import MyButton from "../../components/MyButton/MyButton";
 import ReactToPrint, {useReactToPrint} from "react-to-print";
 import SettingsToPrint from "./Print/SettingsToPrint";
-import {deleteItem, editItem} from "../../utils/ItemsDataBase";
+import {deleteItem, editItem} from "../../utils/DataBase/ItemsDataBase";
 import {HOME_ROUTE} from "../../utils/consts";
 
 
@@ -22,6 +22,7 @@ const ItemPage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const items = useSelector(state => state.items.items)
+    const user = useSelector(state => state.user.user)
 
     const currentURL = window.location.href;
     const rootClasses = [styles.Main]
@@ -51,12 +52,11 @@ const ItemPage = () => {
         const Recipient = currentItem ? currentItem.Recipient : '9999'
         const Sender = currentItem ? currentItem.Sender : '9999'
 
-        getItem({index, setItemData})
 
+        getItem({index, setItemData})
         getRecipient({Recipient, setItemData})
         getSender({Sender, setItemData})
 
-        console.log(rootClasses.join(' '));
     }, [currentItem]);
 
     const componentRef = useRef();
@@ -87,7 +87,7 @@ const ItemPage = () => {
 
         if (userIndex === currentItem.index) {
             try {
-                const response = await deleteItem(id);
+                const response = await deleteItem({id, currentItem, user});
 
                 if (response) {
                     navigate(HOME_ROUTE)

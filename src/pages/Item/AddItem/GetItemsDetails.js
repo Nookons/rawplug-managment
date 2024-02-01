@@ -1,5 +1,5 @@
-import data from '../../../utils/ItemsData.json'
-import dataPallets from '../../../utils/PalletsData.json'
+import data from '../../../utils/jsonData/ItemsData.json'
+import dataPallets from '../../../utils/jsonData/PalletsData.json'
 
 export const getItemDetails = ({setFormData, formData}) => {
     const index = formData.index

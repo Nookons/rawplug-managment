@@ -6,7 +6,7 @@
     "JM": "sht",
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
     "description": "Nozzle for products",
-    "UsedOnMadescriptionchine": [2, 3]
+    "UsedOnMachine": [2, 3]
   },
   {
     "index": "R-NOZ-14-M/Z",
@@ -15,7 +15,7 @@
     "JM": "sht",
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
     "description": "Nozzle for products",
-    "UsedOnMadescriptionchine": [2, 3]
+    "UsedOnMachine": [2, 3]
   },
   {
     "index": "KRP-R-NOZ-100",
@@ -24,7 +24,7 @@
     "JM": "sht",
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
     "description": "Dusza nozzle nowy typ 140mm do 10 14 16",
-    "UsedOnMadescriptionchine": [2, 3]
+    "UsedOnMachine": [2, 3]
   },
   {
     "index": "KRP-R-NOZ-140-Z",
@@ -33,7 +33,7 @@
     "JM": "sht",
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
     "description": "Dusza nozzle nowy typ 140mm do 10 14 16",
-    "UsedOnMadescriptionchine": [2, 3]
+    "UsedOnMachine": [2, 3]
   },
   {
     "index": "R-NOZ-140-Z",
@@ -42,7 +42,7 @@
     "JM": "sht",
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
     "description": "Dusza nozzle nowy typ 140mm do 10 14 16",
-    "UsedOnMadescriptionchine": [2, 3]
+    "UsedOnMachine": [2, 3]
   },
   {
     "index": "R-NOZ-10-M/Z",
@@ -51,7 +51,7 @@
     "JM": "sht",
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
     "description": "Nozzle for products",
-    "UsedOnMadescriptionchine": [2, 3]
+    "UsedOnMachine": [2, 3]
   },
   {
     "index": "OZ-U-255-164-295",
@@ -144,6 +144,15 @@
     "UsedOnMachine": [1]
   },
   {
+    "index": "Q-C-CART-SBS-600ML",
+    "Name": "Cartridge",
+    "palletQta": 1224,
+    "JM": "sht",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Cartridges for products",
+    "UsedOnMachine": [1]
+  },
+  {
     "index": "Q-C-DOLGRAN63",
     "Name": "Chemical",
     "palletQta": 1065,
@@ -199,11 +208,11 @@
   },
   {
     "index": "Q-C-EPOXY-EP320",
-    "Name": "Barrel",
+    "Name": "Zywica",
     "palletQta": 1000,
     "JM": "kg",
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
-    "description": "Barrel item",
+    "description": "Zywica poksydowa EP 320",
     "UsedOnMachine": "Chemical"
   },
   {
@@ -279,12 +288,21 @@
     "UsedOnMachine": "Chemical"
   },
   {
+    "index": "Q-C-P164",
+    "Name": "Zywica",
+    "palletQta": 1100,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Zywica vinyloestrowa bez styrenu P164-HYBRYDA",
+    "UsedOnMachine": "Chemical"
+  },
+  {
     "index": "Q-C-P-120",
     "Name": "Zywica",
     "palletQta": 1100,
     "JM": "kg",
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
-    "description": "Zywica poliestrowa polimal px",
+    "description": "Zywica poliestrowa bez styrenu",
     "UsedOnMachine": "Chemical"
   },
   {
@@ -313,5 +331,23 @@
     "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
     "description": "Folia do kielbasekbe DL95",
     "UsedOnMachine": [1, 2, 3]
+  },
+  {
+    "index": "Q-C-DTINT-GREY",
+    "Name": "Barwnik",
+    "palletQta": 20,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Folia do kielbasekbe DL95",
+    "UsedOnMachine": "Chemical"
+  },
+  {
+    "index": "Q-C-D20",
+    "Name": "Chemical",
+    "palletQta": 600,
+    "JM": "kg",
+    "ImageUrl": "https://www.jonction-et-derivation-electriques.fr/WebRoot/ce_fr2/Shops/294626/6079/B824/9F31/710F/C7AE/C0A8/190E/483A/carton-R-KEM-II-300ml.jpg",
+    "description": "Unknown",
+    "UsedOnMachine": "Chemical"
   }
 ]

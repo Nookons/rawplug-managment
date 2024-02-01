@@ -1,9 +1,6 @@
 import {getDatabase, ref, set, remove, update} from "firebase/database";
-import dayjs from "dayjs";
-import {useSelector} from "react-redux";
-import {getCurrentDate} from "./getDate";
-import {getCurrentUSer} from "./getUser";
-import addUserAction from "./addAction";
+import {getCurrentDate} from "../getDate";
+import {getCurrentUSer} from "../getUser";
 
 const validateData = (data) => {
     const validateLength = (value, field, minLength) => {
@@ -20,27 +17,73 @@ const validateData = (data) => {
     }
 };
 
-export function deleteItem (id) {
-    return new Promise((resolve, reject) => {
+export function addToUsedItem({ id, lastElement, user }) {
+    return new Promise(async (resolve, reject) => {
         const db = getDatabase();
         const itemRef = ref(db, 'items/' + id);
 
-        remove(itemRef)
-            .then(() => {
-                resolve(true);
-            })
-            .catch((error) => {
-                reject(false);
+        const date = getCurrentDate();
+        const delete_id = Date.now();
+
+        console.log(lastElement);
+
+        const actionInfo = {
+            id: delete_id,
+            addDate: date,
+            Created: user ? getCurrentUSer(user) : null,
+            userUid: user ? user.uid : null,
+        };
+
+        try {
+            await set(ref(db, 'used/' + id + '/'), {
+                ...actionInfo,
+                usedItem: lastElement ? lastElement : null
             });
+
+            await remove(itemRef);
+            resolve(true);
+        } catch (error) {
+            console.error('Error deleting item:', error);
+            reject(false);
+        }
     });
 }
+
+export function deleteItem({ id, currentItem, user }) {
+    return new Promise(async (resolve, reject) => {
+        const db = getDatabase();
+        const itemRef = ref(db, 'items/' + id);
+
+        const date = getCurrentDate();
+        const delete_id = Date.now();
+
+        const actionInfo = {
+            id: delete_id,
+            deletedDate: date,
+            Created: user ? getCurrentUSer(user) : null,
+            userUid: user ? user.uid : null,
+        };
+
+        try {
+            await set(ref(db, 'deleted/' + id + '/'), {
+                ...actionInfo,
+                item: currentItem ? currentItem : null,
+            });
+
+            await remove(itemRef);
+            resolve(true);
+        } catch (error) {
+            console.error('Error deleting item:', error);
+            reject(false);
+        }
+    });
+}
+
 export function editItem (id) {
     return new Promise((resolve, reject) => {
         try {
             const db = getDatabase();
-
             const date = getCurrentDate();
-
             const itemRef = ref(db, 'items/' + id);
 
             const fieldPath = 'lastChange';

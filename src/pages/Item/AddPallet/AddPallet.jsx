@@ -2,14 +2,14 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {getItemDetails, getPalletDetails} from "../AddItem/GetItemsDetails";
-import {writeUserItem} from "../../../utils/ItemsDataBase";
+import {writeUserItem} from "../../../utils/DataBase/ItemsDataBase";
 import {HOME_ROUTE} from "../../../utils/consts";
-import data from "../../../utils/PalletsData.json";
+import data from "../../../utils/jsonData/PalletsData.json";
 import styles from "./AddPallet.module.css";
 import Loader from "../../../components/Loader/Loader";
 import {Autocomplete, FormControl, InputAdornment, OutlinedInput, TextField} from "@mui/material";
 import MyButton from "../../../components/MyButton/MyButton";
-import {writeUserPallet} from "../../../utils/ReadyPalletsDataBase";
+import {writeUserPallet} from "../../../utils/DataBase/ReadyPalletsDataBase";
 
 const AddPallet = () => {
     const user = useSelector(state => state.user.user)

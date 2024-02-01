@@ -1,6 +1,6 @@
 import {getDatabase, ref, set} from "firebase/database";
-import {getCurrentDate} from "./getDate";
-import {getCurrentUSer} from "./getUser";
+import {getCurrentDate} from "../getDate";
+import {getCurrentUSer} from "../getUser";
 
 export function writeUserPallet({data, user}) {
     try {

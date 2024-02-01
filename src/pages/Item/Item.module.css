@@ -3,9 +3,9 @@
     min-height: calc(100dvh - 174px);
     margin: 0 auto;
     padding: 14px;
-    background-color: white;
     display: flex;
     justify-content: center;
+    background-color: #B7E5B4;
 }
 .Wrapper {
     display: flex;

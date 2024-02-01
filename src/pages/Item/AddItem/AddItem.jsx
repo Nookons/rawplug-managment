@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {writeUserItem} from "../../../utils/ItemsDataBase";
+import {writeUserItem} from "../../../utils/DataBase/ItemsDataBase";
 import {useDispatch, useSelector} from "react-redux";
 import {
     Autocomplete,
@@ -18,7 +18,7 @@ import Loader from "../../../components/Loader/Loader";
 import {findAllInRenderedTree} from "react-dom/test-utils";
 import {getItemDetails} from "./GetItemsDetails";
 import MyButton from "../../../components/MyButton/MyButton";
-import data from '../../../utils/ItemsData.json'
+import data from '../../../utils/jsonData/ItemsData.json'
 
 const AddItem = () => {
     const user = useSelector(state => state.user.user)
@@ -213,7 +213,9 @@ const AddItem = () => {
                         {/*<FormHelperText id="outlined-weight-helper-text">Quantity</FormHelperText>*/}
                     </FormControl>
                 </div>
-                <MyButton click={addItem}>Add item</MyButton>
+                <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: 14}}>
+                    <MyButton click={addItem}>Add item</MyButton>
+                </div>
             </div>
         </div>
     );
