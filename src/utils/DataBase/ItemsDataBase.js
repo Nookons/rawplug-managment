@@ -121,11 +121,14 @@ export function writeUserItem({data, user}) {
             throw new Error('Not user')
         }
 
+        console.log(data);
+
         const item = {
             id: id,
             createdDate: date,
             lastChange: date,
             index: data ? data.index : null,
+            type: data ? data.type : null,
             quantity: data ? Number(data.quantity) : null,
             JM: data ? data.JM : null,
             Recipient: data ? data.ToDepartment : null,
@@ -134,7 +137,8 @@ export function writeUserItem({data, user}) {
             userUid: user ? user.uid : null,
             PalletReceipt: id + (user ? '-' + user.uid.slice(0, 4) : "-9999"),
             status: data ? data.status : null,
-            description: data ? data.description : null
+            description: data ? data.description : null,
+            batchNumber: data.batchNumber ? Number(data.batchNumber) : null
         }
 
         /*addUserAction({item, user})*/

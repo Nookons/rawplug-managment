@@ -19,32 +19,54 @@ import {findAllInRenderedTree} from "react-dom/test-utils";
 import {getItemDetails} from "./GetItemsDetails";
 import MyButton from "../../../components/MyButton/MyButton";
 import data from '../../../utils/jsonData/ItemsData.json'
+import Box from "@mui/material/Box";
 
 const AddItem = () => {
     const user = useSelector(state => state.user.user)
+    const items = useSelector(state => state.items.items)
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const [error, setError] = useState('');
-    const [loader, setLoader] = useState(false);
-    const [ITEM_INDEX, setITEM_INDEX] = useState([]);
+    const [error, setError]             = useState('');
+    const [loader, setLoader]           = useState(false);
+    const [ITEM_INDEX, setITEM_INDEX]   = useState([]);
+    const [isBarrel, setIsBarrel]       = useState(false);
 
     const [formData, setFormData] = useState({
         index: '',
+        type: '',
         description: '',
         FromDepartment: '',
         JM: '',
         ToDepartment: '',
         quantity: 0,
         status: '',
+        batchNumber: 0,
     });
 
 
 
     useEffect(() => {
         getItemDetails({setFormData, formData})
-        console.log(formData);
     }, [formData.index]);
+
+
+    useEffect(() => {
+
+        if (formData.type.toLowerCase() === 'barrel') {
+            try {
+                const only_Barrel = items.filter(item => item.type.toLowerCase() === 'barrel')
+                const maxObject = only_Barrel.reduce((max, current) => (current.batchNumber > max.batchNumber ? current : max));
+                setFormData((prevData) => ({...prevData, batchNumber: maxObject.batchNumber + 1}))
+            }catch (e) {
+                console.error(e)
+            }
+
+            setIsBarrel(true)
+        }else {
+            setIsBarrel(false)
+        }
+    }, [formData.type]);
 
 
     const handleInputChange = (type, value, event) => {
@@ -64,8 +86,10 @@ const AddItem = () => {
             const data = {
                 index: formData.index,
                 FromDepartment: formData.FromDepartment,
+                type: formData.type,
                 description: formData.description,
                 ToDepartment: formData.ToDepartment,
+                batchNumber: formData.batchNumber,
                 JM: formData.JM,
                 quantity: formData.quantity,
                 status: formData.status,
@@ -88,14 +112,15 @@ const AddItem = () => {
 
     const departmentsIndex = [
         { title: 'PWT10', value: 1994 },
+        { title: 'PWT30', value: 1972 },
         { title: 'PWT70', value: 1972 },
         { title: 'MSP', value: 1972 },
     ];
 
     const statusIndex = [
-        { title: 'Available', value: 1994 },
-        { title: 'Hold', value: 1972 },
-        { title: 'Odzysk', value: 1972 },
+        { title: 'Available' },
+        { title: 'Hold' },
+        isBarrel ? { title: 'Odzysk' } : { title: '' },
     ];
 
     useEffect(() => {
@@ -109,13 +134,8 @@ const AddItem = () => {
     return (
         <div className={styles.Main}>
             <div className={styles.Wrapper}>
-                <h5 style={{marginTop: 14, color: 'red'}}>{error}</h5>
+                <h5 style={{marginTop: 4, color: 'red'}}>{error}</h5>
                 <Loader value={loader} />
-
-                <article style={{color: "gray", margin: '4px 0'}}>From: {user ? user.email : null}</article>
-                <article style={{color: "gray", margin: '4px 0'}}>Description: {formData.description}</article>
-                <hr/>
-
                 <div className={styles.AutoCompleteWrapper}>
                     <div>
                         <Autocomplete
@@ -212,9 +232,28 @@ const AddItem = () => {
                             required={true} autoFocus={false}/>
                         {/*<FormHelperText id="outlined-weight-helper-text">Quantity</FormHelperText>*/}
                     </FormControl>
+                    {isBarrel ?
+                        <TextField
+                            fullWidth
+                            label="Batch N"
+                            type={"Number"}
+                            value={formData.batchNumber}
+                            onChange={(event) => handleInputChange('batchNumber', event.target.value)}
+                            id="outlined-start-adornment"
+                            sx={{ width: '100%' }}
+                            InputProps={{
+                                startAdornment: <InputAdornment position="start">#</InputAdornment>,
+                            }}
+                        />
+                        : null
+                    }
                 </div>
                 <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: 14}}>
                     <MyButton click={addItem}>Add item</MyButton>
+                </div>
+                <div>
+                    <article style={{color: "gray", margin: '4px 0'}}>From: {user ? user.email : null}</article>
+                    {formData.description ? <article style={{color: "gray", margin: '4px 0'}}>Description: {formData.description}</article> : null}
                 </div>
             </div>
         </div>

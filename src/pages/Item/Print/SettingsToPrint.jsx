@@ -48,37 +48,46 @@ const SettingsToPrint = ({isActive, currentItem, itemData }) => {
             </div>
 
             <div>
-                <article style={{fontSize: '24px', marginTop: 14}}>
-                    Item created date:
-                    <span> {currentItem?.createdDate}</span>
-                </article>
-                <article style={{fontSize: '24px', marginTop: 14}}>
-                    Created by:
-                    <span> {currentItem?.Created}</span>
-                </article>
-                <article style={{fontSize: '24px', marginTop: 14}}>
-                    Quantity:
-                    <span> {currentItem?.quantity} ({currentItem?.JM})</span>
-                </article>
-                <article style={{fontSize: '24px', marginTop: 14}}>
-                    Status:
-                    <span> {currentItem?.status} </span>
-                </article>
-            </div>
-            <div>
-                <article style={{fontSize: '34px'}}>
+                <article style={{fontSize: '24px'}}>
                     Sender:
                     <span> {currentItem?.Sender}</span>
                     <br />
                     <span> || {itemData.from}</span>
                 </article>
                 <br/>
-                <article style={{fontSize: '34px'}}>
+                <article style={{fontSize: '24px'}}>
                     To:
                     <span> {currentItem?.Recipient}</span>
                     <br />
                     <span> || {itemData.to}</span>
                 </article>
+            </div>
+
+            <div>
+                <article style={{fontSize: '24px', marginTop: 14}}>
+                    Item created date:
+                    <span style={{fontWeight: 600}}> {currentItem?.createdDate}</span>
+                </article>
+                <article style={{fontSize: '24px', marginTop: 14}}>
+                    Created by:
+                    <span style={{fontWeight: 600}}> {currentItem?.Created}</span>
+                </article>
+                <article style={{fontSize: '24px', marginTop: 14}}>
+                    Quantity:
+                    <span style={{fontWeight: 600}}> {currentItem?.quantity} ({currentItem?.JM})</span>
+                </article>
+                <article style={{fontSize: '24px', marginTop: 14}}>
+                    Status:
+                    <span style={{fontWeight: 600}}> {currentItem?.status} </span>
+                </article>
+                {currentItem.batchNumber
+                ?
+                    <article style={{fontSize: '24px', marginTop: 14}}>
+                        Batch Number:
+                        <span style={{fontWeight: 600}}> {currentItem?.batchNumber} </span>
+                    </article>
+                : null
+                }
             </div>
             <div>
                 <h4>Remarks:</h4>

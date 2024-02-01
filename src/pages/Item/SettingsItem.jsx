@@ -7,6 +7,21 @@ const renderSkeletonOrValue = (value, skeletonProps) => (
     value ? value : <Skeleton {...skeletonProps} />
 );
 
+const getSmileType = (type) => {
+    switch (type) {
+        case "Barrel" :
+            return '🛢️'
+        case "Carton" :
+            return '📦'
+        case "Cartridge" :
+            return '🍾'
+        case "Chemical" :
+            return '🚰'
+        default:
+            break
+    }
+}
+
 const SettingsItem = ({currentItem, itemData, change}) => {
     const renderMark = (label, value) => (
         <article className={styles.Mark}>
@@ -31,7 +46,7 @@ const SettingsItem = ({currentItem, itemData, change}) => {
 
     return (
         <div className={styles.Settings}>
-            <h3>Index: <span>{renderSkeletonOrValue(currentItem?.index)}</span></h3>
+            <h3>Index: <span>{renderSkeletonOrValue(currentItem?.index)} {getSmileType(currentItem.type)}</span></h3>
             <article style={{color: 'gray'}}>#
                 <span> {renderSkeletonOrValue(currentItem?.PalletReceipt)}</span>
             </article>
@@ -42,6 +57,7 @@ const SettingsItem = ({currentItem, itemData, change}) => {
             {renderMark('Created', currentItem?.Created)}
             {renderMark('Quantity', currentItem?.quantity + ' | ' + currentItem?.JM)}
             {renderMark('Status', currentItem?.status)}
+            {currentItem.batchNumber ? renderMark('Batch Number', currentItem?.batchNumber) : null}
 
 
             <article className={styles.Mark}>
